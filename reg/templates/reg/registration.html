@@ -1,0 +1,34 @@
+{% extends "mainApp/index.html" %}
+
+{% load static %}
+{% block content %}
+
+<div class="form-px">
+   <form class="form-reg" method="post">
+      <span class="name-reg">Регистрация</span>
+      {%csrf_token%}
+      {{form.username}}
+      {{form.email}}
+      {{form.first_name}}
+      {{form.last_name}}
+      {{form.password1}}
+      {{form.password2}}
+      <div class="form-btn">
+         <button class="btn btn-outline-success btn-next">Зарегистрироваться</button>
+      </div>
+   </form>
+</div>
+<script>
+   var form_fields = document.getElementsByTagName('input')
+   form_fields[1].placeholder = 'Введите логин';
+   form_fields[2].placeholder = 'Введите Email';
+   form_fields[3].placeholder = 'Введите Имя';
+   form_fields[4].placeholder = 'Введите Фамилию';
+   form_fields[5].placeholder = 'Введите пароль';
+   form_fields[6].placeholder = 'Повторите пароль';
+
+   for (var field in form_fields) {
+      form_fields[field].className += 'form-control'
+   }
+</script>
+{% endblock %}

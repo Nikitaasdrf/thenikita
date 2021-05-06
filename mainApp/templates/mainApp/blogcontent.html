@@ -1,0 +1,31 @@
+{% extends "mainApp/index.html" %}
+{% block title %}Блог Контент | The Nikita{% endblock %}
+{% block content %}
+<div class="blogcontent-px">
+   <div class="blogcontent">
+      <h3>{{ post.title }}</h3>
+      <img src="{{ post.picture.url }}" style="width: 400px;" alt="">
+      <p>{{ post.content }}</p>
+   </div>
+   <h3 class="title-blogcontent-px">Комментарии</h3>
+   <div class="blogcontent-comment">
+      <form method="POST">
+         {% csrf_token %}
+         {{ form.comment }}
+         <button type="submit" value="Отправить">Добавить</button>
+      </form>
+   </div>
+   {% for el in comment %}
+   <div class="comment">
+      <span>{{ el.comment }}</span>
+      <div class="user-comment">
+      <span>Написал: {{ el.user }}</span>
+      <span>{{ el.time }}</span>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+<script>
+if ( window.history.replaceState ) {window.history.replaceState( null, null, window.location.href );}
+</script>
+{% endblock %}

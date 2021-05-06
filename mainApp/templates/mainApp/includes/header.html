@@ -1,0 +1,37 @@
+{% block content %}
+
+{% load static %}
+<div class="header-px">
+   <a href="/">Главная</a>
+   <a href="/blog">Блог</a>
+   <a href="/useres">Полезные ресурсы</a>
+   <a href="/video">Видео</a>
+   <img src="{% static 'img/n.png' %}" alt="">
+   <a href="/feedback">Обратная связь</a>
+   <a href="/contacts">Контакты</a>
+   <a href="/about">О нас</a>
+   {% if user.is_superuser %}
+   <div class="dropdown">
+      <div class="dropdown-btn" onclick="location.href='/logout';">Выйти</div>
+      <div class="dropdown-content">
+         <div align="right" class="dropdown-in unique-btn" onclick="location.href='/addarticle';"><span>Админ</span></div>
+      </div>
+   </div>
+   {% elif user.is_authenticated %}
+   <div class="dropdown">
+      <div class="dropdown-btn" onclick="location.href='/logout';">Выйти</div>
+      <div class="dropdown-content">
+         <div align="right" class="dropdown-in unique-btn"><span>{{ user_first_name }} {{ user_last_name }}</span></div>
+      </div>
+   </div>
+   {% else %}
+   <div class="dropdown">
+      <div class="dropdown-btn" onclick="location.href='/next';">Войти</div>
+      <div class="dropdown-content">
+         <div onclick="location.href='/registration';" align="right" class="dropdown-in unique-btn"><span>Регистрация</span></div>
+      </div>
+   </div>
+   {% endif %}
+
+</div>
+{% endblock %}

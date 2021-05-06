@@ -1,0 +1,20 @@
+{% extends "mainApp/index.html" %}
+
+{% load static %}
+{% block content %}
+
+
+<div class="form-px">
+   <form class="form-auth" method="post">
+      <span class="name-reg">Вход</span>
+      {%csrf_token%}
+      <input type="text" name="username" class="form-control" placeholder="Имя пользователя">
+      <input type="password" name="password" class="form-control" placeholder="Пароль">
+      <div class="form-btn">
+         <button class="btn btn-outline-success btn-next">Войти</button>
+         <a href="/registration" class="btn btn-outline-warning btn-next">Зарегистрироваться</a>
+      </div>
+   </form>
+</div>
+
+{% endblock %}

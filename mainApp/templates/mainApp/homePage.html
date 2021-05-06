@@ -1,0 +1,36 @@
+{% extends "mainApp/index.html" %}
+{% block title %}Главная | The Nikita{% endblock %}
+{% block content %}
+<div class="home-px">
+   <div class="span-text"><p>The Nikita</p>
+    <span>Доброго времени суток! Наш блог расчитан на пользователей интересующихся последними технологиями нашего мира. Здесь можно узнать много нового, обсудить насущную тему, задать свой вопрос и получить много полезной информации. <br>Хорошего времяпрепровождения!</span>
+   </div>
+   <div style="width: 37rem;" id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="static/img/11.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="static/img/33.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="static/img/22.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+</div>
+{% endblock %}
+{% block gleb %}Главная страница{% endblock %}

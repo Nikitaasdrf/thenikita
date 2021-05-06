@@ -1,0 +1,36 @@
+{% extends "mainApp/index.html" %}
+{% block title %}Добавить статью | The Nikita{% endblock %}
+{% block content %}
+
+<div class="addarticle-px">
+   <h4>Добавить статью</h4>
+   <div class="addarticle">
+      <form method="POST" class="addarticle-form" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{ form.picture }}
+         {{ form.title }}
+         {{ form.description }}
+         {{ form.content }}
+         {{ form.posted }}
+         <button type="submit" value="Отправить">Добавить</button>
+         {% for error in form.non_field_errors %}
+         <span class="error-message" style="color: red;">{{ error }}</span>
+         {% endfor %}
+      </form>
+   </div>
+   <h4>Сообщения от пользователей</h4>
+   <div class="message-user-px">
+   {% for el in formmessage %}
+      <div class="message-user">
+         <span><strong>Имя:</strong> {{ el.name }}</span>
+         <span><strong>Сообщение:</strong> {{ el.message }}</span>
+         <span><strong>Статус:</strong> {{ el.ans }}</span>
+         <span><strong>Email:</strong> {{ el.email }}</span>
+      </div>
+   {% endfor %}
+   </div>
+</div>
+<script>
+if ( window.history.replaceState ) {window.history.replaceState( null, null, window.location.href );}
+</script>
+{% endblock %}

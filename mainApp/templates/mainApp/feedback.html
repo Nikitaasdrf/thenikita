@@ -1,0 +1,41 @@
+{% extends "mainApp/index.html" %}
+{% block title %}Обратная связь | The Nikita{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+{% if form != None %}
+<div class="feedback-px">
+   <h4>Оставьте нам свое сообщение</h4>
+   <span>(Оставить свой отзыв о нас, передать информацию, задать вопрос)</span>
+      <div class="feedback">
+         <form method="POST" class="feedback-form">
+            {% csrf_token %}
+            {{ form.name }}
+            {{ form.message }}
+            <div>{{ form.ans }}<label for="scales" style="margin-left: 1rem;">Отправить ответ на e-mail</label></div>
+            {{ form.email }}
+            <button type="submit" value="Отправить">Отправить</button>
+         </form>
+      </div>
+</div>
+{% else %}
+<div class="feedback-px">
+<h3>Вы оставили сообщение:</h3><br>
+<span>Ваше имя:</span><span><strong> {{ data.name }}</strong></span><br>
+<span>Ваше сообщение:</span><strong> {{ data.message }}</strong><span></span><br>
+<span>Ваш e-mail:</span><span><strong> {{ data.email }}</strong></span><br>
+<button onclick="location.href='/';" class="btn-home">На главную!</button>
+</div>
+{% endif %}
+{% else %}
+<div class="feedback-px">
+   <h4>Отправлять сообщения могут только зарегестрированные пользователи!</h4>
+   <div>
+   <a href="/next" class="btn btn-outline-success btn-next" style="width: 15rem; margin: 2rem 1rem;">Войти</a>
+   <a href="/registration" class="btn btn-outline-warning" style="width: 15rem; margin: 2rem 1rem;">Зарегистрироваться</a>
+</div>
+</div>
+{% endif %}
+<script>
+   if ( window.history.replaceState ) {window.history.replaceState( null, null, window.location.href );}
+</script>
+{% endblock %}
