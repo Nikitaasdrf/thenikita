@@ -20,7 +20,7 @@ def blog(request):
         blog = Blog.objects.order_by('-posted')
         context = {'user_first_name': user_first_name, 'user_last_name': user_last_name, 'footertitle': 'Блог', 'blog': blog}
     else:
-        blog = Blog.objects.all()
+        blog = Blog.objects.order_by('-posted')
         context = {'footertitle': 'Блог', 'blog': blog}
     return render(request, 'mainApp/blog.html', context)
 
