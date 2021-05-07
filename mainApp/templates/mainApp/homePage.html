@@ -1,5 +1,6 @@
 {% extends "mainApp/index.html" %}
 {% block title %}Главная | The Nikita{% endblock %}
+{% load static %}
 {% block content %}
 <div class="home-px">
    <div class="span-text"><p>The Nikita</p>
@@ -31,6 +32,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    <img class="homepage-img" src="{% static 'img/11.jpg'%}" alt="">
 </div>
 {% endblock %}
 {% block gleb %}Главная страница{% endblock %}
