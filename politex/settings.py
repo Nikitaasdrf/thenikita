@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ipunojpqdq4x7aqzwg*0vp&o*)1j2nz^zvlg0pbb+=oiu**fi2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://nikitaryzhov.pythonanywhere.com/', 'nikitaryzhov.pythonanywhere.com', 'www.nikitaryzhov.pythonanywhere.com']
 
 
 # Application definition
