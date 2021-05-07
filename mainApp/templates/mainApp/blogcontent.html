@@ -4,10 +4,11 @@
 <div class="blogcontent-px">
    <div class="blogcontent">
       <h3>{{ post.title }}</h3>
-      <img src="{{ post.picture.url }}" style="width: 400px;" alt="">
+      <img src="{{ post.picture.url }}" alt="">
       <p>{{ post.content }}</p>
    </div>
    <h3 class="title-blogcontent-px">Комментарии</h3>
+   {% if user.is_authenticated %}
    <div class="blogcontent-comment">
       <form method="POST">
          {% csrf_token %}
@@ -15,6 +16,9 @@
          <button type="submit" value="Отправить">Добавить</button>
       </form>
    </div>
+   {% else %}
+   <h4>Оставлять комментарии могут только зарегестрированные пользователи!</h4>
+   {% endif %}
    {% for el in comment %}
    <div class="comment">
       <span>{{ el.comment }}</span>

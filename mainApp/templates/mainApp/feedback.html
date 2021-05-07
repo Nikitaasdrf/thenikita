@@ -5,7 +5,7 @@
 {% if form != None %}
 <div class="feedback-px">
    <h4>Оставьте нам свое сообщение</h4>
-   <span>(Оставить свой отзыв о нас, передать информацию, задать вопрос)</span>
+   <span class="text-nikita-unij">(Оставить свой отзыв о нас, передать информацию, задать вопрос)</span>
       <div class="feedback">
          <form method="POST" class="feedback-form">
             {% csrf_token %}
@@ -29,9 +29,9 @@
 {% else %}
 <div class="feedback-px">
    <h4>Отправлять сообщения могут только зарегестрированные пользователи!</h4>
-   <div>
-   <a href="/next" class="btn btn-outline-success btn-next" style="width: 15rem; margin: 2rem 1rem;">Войти</a>
-   <a href="/registration" class="btn btn-outline-warning" style="width: 15rem; margin: 2rem 1rem;">Зарегистрироваться</a>
+   <div class="feedback-nikita">
+   <a href="/next" class="btn btn-outline-success btn-next">Войти</a>
+   <a href="/registration" class="btn btn-outline-warning">Зарегистрироваться</a>
 </div>
 </div>
 {% endif %}
