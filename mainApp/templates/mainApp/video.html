@@ -1,14 +1,15 @@
 {% extends "mainApp/index.html" %}
 {% block title %}Видео | The Nikita{% endblock %}
+{% load static %}
 {% block content %}
 <div class="video-px">
    <div class="video">
       <h3>Сайклатрон</h3>
-      <VIDEO src="/static/video/video1.mp4" class="shadow-lg" controls="controls" poster="/static/img/cyclotron.jpg"></VIDEO>
+      <VIDEO poster="{% static 'img/cyclotron.jpg'%}" class="shadow-lg" controls><source src="{% static 'video/video1.mp4' type='video/mp4'%}"></VIDEO>
    </div>
    <div class="video">
       <h3>Фри</h3>
-      <VIDEO src="/static/video/video2.mp4" class="shadow-lg" controls="controls" poster="/static/img/phree.jpg"></VIDEO>
+      <VIDEO poster="{% static 'img/phree.jpg'%}" class="shadow-lg" controls><source src="{% static 'video/video2.mp4' type='video/mp4'%}"></VIDEO>
    </div>
 </div>
 
