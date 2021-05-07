@@ -24,7 +24,7 @@ SECRET_KEY = 'ipunojpqdq4x7aqzwg*0vp&o*)1j2nz^zvlg0pbb+=oiu**fi2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['http://nikitaryzhov.pythonanywhere.com/', 'nikitaryzhov.pythonanywhere.com', 'www.nikitaryzhov.pythonanywhere.com']
+ALLOWED_HOSTS = ['http://nikitaryzhov.pythonanywhere.com/', 'nikitaryzhov.pythonanywhere.com', 'www.nikitaryzhov.pythonanywhere.com', 'http://127.0.0.1:8000/', '127.0.0.1:8000', '127.0.0.1']
 
 
 # Application definition
@@ -120,6 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mainApp/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
